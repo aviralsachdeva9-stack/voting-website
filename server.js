@@ -429,7 +429,7 @@ app.get('/api/admin/stats', authenticate, adminOnly, async (req, res) => {
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Catch-all: any non-API route serves React's index.html for client-side routing
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
